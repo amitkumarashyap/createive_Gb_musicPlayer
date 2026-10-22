@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>CreativeGB - Song Player</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- Top Header & Search Bar -->
+  <header class="app-header">
+    <div class="brand">
+      <h1>CreativeGB</h1>
+    </div>
+
+    <form id="search-form" class="search-bar">
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Koi bhi gaana search karein..."
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="search-btn">Search</button>
+    </form>
+  </header>
+
+  <main class="main-container">
+    <!-- Sticky Video Player Section -->
+    <section id="player-section" class="player-section hidden">
+      <div class="video-wrapper">
+        <div id="youtube-player"></div>
+      </div>
+      <div class="now-playing-info">
+        <div class="now-playing-top">
+          <span class="badge">NOW PLAYING</span>
+          <button id="add-current-to-playlist-btn" class="mini-btn" title="Add to Playlist">➕ Add to Playlist</button>
+        </div>
+        <h2 id="current-song-title">Gaana chunein...</h2>
+        <p id="current-song-channel"></p>
+      </div>
+    </section>
+
+    <!-- Tabs Navigation: Search Results vs My Playlist -->
+    <nav class="view-tabs">
+      <button id="tab-search" class="tab-btn active">🔍 Search Results (<span id="results-count">0</span>)</button>
+      <button id="tab-playlist" class="tab-btn">🎶 My Playlist (<span id="playlist-count">0</span>)</button>
+    </nav>
+
+    <!-- SECTION 1: Search Results Section with Fold/Unfold -->
+    <section id="search-view" class="content-section">
+      <div class="section-header">
+        <span class="section-title">Found Songs</span>
+        <button id="toggle-search-btn" class="fold-btn">Fold ▲</button>
+      </div>
+      <div id="status-message" class="status-message">
+        👆 Upar search box mein apne pasandida gaane ka naam likhein!
+      </div>
+      <div id="results-collapsible" class="collapsible-content">
+        <section id="results-list" class="songs-list" aria-label="Search Results"></section>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Custom Playlist Section with Fold/Unfold -->
+    <section id="playlist-view" class="content-section hidden">
+      <div class="section-header">
+        <span class="section-title">My Custom Playlist</span>
+        <div class="section-actions">
+          <button id="clear-playlist-btn" class="fold-btn danger">Clear All</button>
+          <button id="toggle-playlist-btn" class="fold-btn">Fold ▲</button>
+        </div>
+      </div>
+      <div id="playlist-collapsible" class="collapsible-content">
+        <section id="playlist-items-list" class="songs-list" aria-label="Playlist"></section>
+      </div>
+      <div id="empty-playlist-msg" class="status-message hidden">
+        Aapki playlist abhi khali hai. Kisi bhi gaane ke bagal mein <strong>➕</strong> dabakar add karein!
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Powered by CreativeGB</p>
+  </footer>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "yt-song-search-player",
+  "version": "1.0.0",
+  "description": "Mobile-first YouTube Song Search and Player using official APIs",
+  "scripts": {
+    "dev": "npx vercel dev"
+  },
+  "keywords": ["youtube", "music", "player", "hinglish"],
+  "license": "MIT"
+}

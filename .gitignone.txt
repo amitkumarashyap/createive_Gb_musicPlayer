@@ -1,0 +1,6 @@
+# Node modules aur secret env files ko GitHub par upload mat karo
+node_modules/
+.env
+.env.local
+.vercel
+.DS_Store
